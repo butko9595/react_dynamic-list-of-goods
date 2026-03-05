@@ -12,21 +12,33 @@ export const App: React.FC = () => {
   const [goods, setGoods] = useState<Good[]>([]);
 
   const loadAll = async () => {
-    const data = await getAll();
+    try {
+      const data = await getAll();
 
-    setGoods(data);
+      setGoods(data);
+    } catch (error) {
+      alert('Failed to load all goods');
+    }
   };
 
   const loadFirstFive = async () => {
-    const data = await get5First();
+    try {
+      const data = await get5First();
 
-    setGoods(data);
+      setGoods(data);
+    } catch (error) {
+      alert('Failed to load first five goods');
+    }
   };
 
   const loadRed = async () => {
-    const data = await getRedGoods();
+    try {
+      const data = await getRedGoods();
 
-    setGoods(data);
+      setGoods(data);
+    } catch (error) {
+      alert('Failed to load red goods ');
+    }
   };
 
   return (

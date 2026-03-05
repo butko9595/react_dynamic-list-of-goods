@@ -13,7 +13,7 @@ export const get5First = () => {
       .slice()
       .sort((a, b) => a.name.localeCompare(b.name))
       .slice(0, 5);
-  }); // get only red
+  });
 };
 
 export const getRedGoods = () => {
